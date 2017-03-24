@@ -1,0 +1,49 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Q3</title>
+</head>
+<body>
+	<pre>
+document.write([1, 1.1, .2, 3.22, 3.100, 2222].map(yuan2fen))
+document.write([1,100, 110, 20, 322, 310, 222200].map(fen2yuan))
+	</pre>
+	<script>
+		function fen2yuan(fen) {
+			fen = parseInt(fen, 10)
+			if (isNaN(fen)) {
+				return NaN
+			}
+			var str = fen.toString()
+			var index = str.indexOf('.')
+			str = '00' + str
+			str = str.slice(0, -2) + '.' + str.slice(-2)
+			str = str.replace(/^0+/, '')
+			if (str[0] == '.')
+				return '0' + str
+			return str
+		}
+
+
+		function yuan2fen(yuan) {
+			yuan = parseFloat(yuan, 10)
+			if (isNaN(yuan)) {
+				return NaN
+			}
+			var str = yuan.toString()
+			var index = str.indexOf('.')
+			str += '00'
+			console.log(str)
+			if (index !== -1) {
+				str = str.slice(0, index) + str.slice(index + 1, index + 3)
+				return str.replace(/^0+/, '')
+			}
+			return str
+		}
+
+		document.write([1, 1.1, .2, 3.22, 3.100, 2222].map(yuan2fen))
+		document.write('<br>')
+		document.write([100, 110, 20, 322, 310, 222200].map(fen2yuan))
+	</script>
+</body>
+</html>

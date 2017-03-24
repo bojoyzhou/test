@@ -1,0 +1,24 @@
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Q3</title>
+</head>
+<body>
+	<ul id="test"> 
+		<li>这是第一条</li> 
+		<li>这是第二条</li> 
+		<li>这是第三条</li> 
+	</ul> 
+	<script>
+		document.getElementById('test').addEventListener('click', function(e){
+			var i = 0
+			var elem = e.target
+			while(elem.previousElementSibling){
+				i ++ 
+				elem = elem.previousElementSibling
+			}
+			alert(i)
+		})
+	</script>
+</body>
+</html>
