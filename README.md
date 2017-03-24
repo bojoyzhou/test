@@ -18,7 +18,7 @@
 
 ## 第五题
 
-这里我使用了previousElemntSibling来向前计数，得到当前dom的index
+这里我使用了previousElementSibling来向前计数，得到当前dom的index
 
 ## 第六题
 
