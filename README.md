@@ -1,6 +1,13 @@
+## 第六题
+
+这题我答得很牵强，也花的很多时间，因为实在没有在表单验证上面用过OOP来解决
+如果这题是考察OOP的话，希望可以换题重考
+
+## 第七题
 
 重点在于怎么获取url上面的参数和防止xss注入
 获取url参数可以使用正则来提取
+```
 function getQuery(name, url) {
 	var u = arguments[1] || window.location.search,
 		reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"),
@@ -10,9 +17,11 @@ function getQuery(name, url) {
 
 
 document.getElementById('imgid').src = getQuery('imgurl')
-document.getElementById('mobileid').src = getQuery('mobile')
-
+document.getElementById('mobileid').textContent = getQuery('mobile')
+```
+## 第八题
 之前的工作内容中并不涉及到编写测试用例的部分，所以不是很清楚应该怎样写，我的想法是需要写出所有可能的情况，然后判断结构是否符合预期
+
 测试重点应该是在输错3次的累加规则是怎么样的，我理解的是每次登录成功会重置这个次数
 
 1. 密码输入正确，预期登录成功
